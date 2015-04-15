@@ -1,0 +1,49 @@
+
+<html>
+<head>
+	<title>Main Page</title>
+	<script type="text/javascript" src="../Game/test.js"></script>
+	<script type="text/javascript">
+	
+		
+		
+
+	</script>
+</head>
+<body onunload="javascript:alert('good bye !');">
+
+
+
+
+<div id="playerInformations"> 
+
+<label>First Name :</label> <span id="playerFirstName">{{ FIRST_NAME }} </span><br>
+<label>Last Name:</label> <span id="playerLastName">{{ LAST_NAME }}</span> <br>
+<label>Pseudo:</label>  <span id="playerPseudo">{{ PSEUDO }} </span> <br>
+<label>Score:</label>  <span id="playerScore"> {{ SCORE }}<span> <br>
+<label>Connection status:</label>  <span id="connection"> {{ CONNECTION }}</span> <br>
+
+
+</div>
+
+
+<div id="otherPlayers">
+  <select name="mySelect" size="6" id="mySelect" style="width: 50%;">
+    	{% for person in FRIENDS %}
+    	<option value="1" selected>{{ person.PSEUDO }} Score: {{ person.SCORE }} Connected: {{ person.CONNECTION }}</option>
+    	{% endfor %}
+  </select>
+ <form action="../Game/Game.html" method="post"> 
+	<input id="Game" type="submit" value="Play">
+ </form>
+
+</div>
+
+<form action="../Login/first_page.php" method="post"> 
+<input type="submit" value="Deconnection">
+
+</form>
+
+
+</body>
+</html>
